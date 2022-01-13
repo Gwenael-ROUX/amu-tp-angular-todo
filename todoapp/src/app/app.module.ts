@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { TaskFormComponent } from './task-form.component';
 import { TodoListComponent } from './todo-list.component';
 
+import { TasksService } from './api/tasks.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,13 +18,9 @@ import { TodoListComponent } from './todo-list.component';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    // En important le HttpClientModule, on rend disponible dans notre
-    // application un service crucial, une instance de la classe HttpClient
-    // On pourra utiliser cet objet dans nos composants pour effectuer
-    // des requêtes HTTP :
     HttpClientModule
   ],
-  providers: [],
+  providers: [TasksService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
